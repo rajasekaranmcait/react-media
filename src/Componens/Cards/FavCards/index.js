@@ -16,27 +16,26 @@ class FavCards extends Component {
     render() {
         let imgUrl = this.props.apiData && this.props.apiData.data && this.props.apiData.data.Poster || '';
         let releaseDate = this.props.apiData && this.props.apiData.data && this.props.apiData.data.Released || '';
-        let mediaId = this.props.apiData && this.props.apiData.data && this.props.apiData.data.imdbID || '';
         let title = this.props.apiData && this.props.apiData.data && this.props.apiData.data.Title || '';
-        let titleRoute = title.toString().toLowerCase().replace(/[^a-zA-Z0-9]/g, "-");
         return (
-            <React.Fragment>                <Card className={'card-content' + (this.props.location.pathname === '/' ? ' home' : '')} onClick={(e) => { this.cardClick(e, titleRoute, mediaId) }}>
-                <Card.Img variant="top" src={imgUrl} />
-                <Card.Body className='card-meta'>
-                    <Card.Title>{title}</Card.Title>
-                    <Card.Text>{releaseDate}</Card.Text>
-                    <div className='fav-content favPage'>
-                        <Form.Check
-                            type="checkbox"
-                            label="Favourite"
-                            className='form-check'
-                        />
-                        <div className='fav-heart'>
-                            <BsHeartFill />
+            <React.Fragment>
+                <Card className='card-content'>
+                    <Card.Img variant="top" src={imgUrl} />
+                    <Card.Body className='card-meta'>
+                        <Card.Title>{title}</Card.Title>
+                        <Card.Text>{releaseDate}</Card.Text>
+                        <div className='fav-content favPage'>
+                            <Form.Check
+                                type="checkbox"
+                                label="Favourite"
+                                className='form-check'
+                            />
+                            <div className='fav-heart'>
+                                <BsHeartFill />
+                            </div>
                         </div>
-                    </div>
-                </Card.Body>
-            </Card>
+                    </Card.Body>
+                </Card>
             </React.Fragment>
         );
     }

@@ -35,7 +35,6 @@ class Cards extends Component {
 
     cardClick(e, titleRoute, mediaId) {
         if (this.props.location.pathname === '/') {
-            // this.props.history.push('/' + titleRoute + '/' + mediaId);
             this.props.history.push({
                 pathname: '/' + titleRoute + '/' + mediaId,
                 state: { isChecked: this.state.isChecked }
@@ -50,24 +49,25 @@ class Cards extends Component {
         let title = this.props.apiData && this.props.apiData.data && this.props.apiData.data.Title || '';
         let titleRoute = title.toString().toLowerCase().replace(/[^a-zA-Z0-9]/g, "-");
         return (
-            <React.Fragment>                <Card className={'card-content' + (this.props.location.pathname === '/' ? ' home' : '')} onClick={(e) => { this.cardClick(e, titleRoute, mediaId) }}>
-                <Card.Img variant="top" src={imgUrl} />
-                <Card.Body className='card-meta'>
-                    <Card.Title>{title}</Card.Title>
-                    <Card.Text>{releaseDate}</Card.Text>
-                    <div className='fav-content'>
-                        <Form.Check
-                            type="checkbox"
-                            label="Favourite"
-                            className='form-check'
-                            onClick={(e) => { this.favouriteClick(e) }}
-                        />
-                        <div className='fav-heart'>
-                            {this.state.isChecked ? <BsHeartFill /> : <BsHeart />}
+            <React.Fragment>
+                <Card className={'card-content' + (this.props.location.pathname === '/' ? ' home' : '')} onClick={(e) => { this.cardClick(e, titleRoute, mediaId) }}>
+                    <Card.Img variant="top" src={imgUrl} />
+                    <Card.Body className='card-meta'>
+                        <Card.Title>{title}</Card.Title>
+                        <Card.Text>{releaseDate}</Card.Text>
+                        <div className='fav-content'>
+                            <Form.Check
+                                type="checkbox"
+                                label="Favourite"
+                                className='form-check'
+                                onClick={(e) => { this.favouriteClick(e) }}
+                            />
+                            <div className='fav-heart'>
+                                {this.state.isChecked ? <BsHeartFill /> : <BsHeart />}
+                            </div>
                         </div>
-                    </div>
-                </Card.Body>
-            </Card>
+                    </Card.Body>
+                </Card>
             </React.Fragment>
         );
     }
