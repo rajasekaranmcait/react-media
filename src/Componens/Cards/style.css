@@ -1,0 +1,48 @@
+
+.card-click:hover {
+    color: #000000; 
+}
+.card-content {
+    width: 270px;
+    display: inline-block;
+}
+
+.home {
+    cursor: pointer;
+}
+.card-content img {
+    height: 170px;
+}
+.card-meta {
+    padding: 5px;
+}
+.card-meta .card-title.h5 {
+font-size: 14px;
+}
+.card-meta p {
+    margin: 0;
+    font-size: 12px;
+}
+.fav-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-check {
+   padding: 0;
+}
+.fav-content input {
+    width: 110px;
+    height: 25px;
+    display: inline-block;
+    opacity: 0;
+    cursor: pointer;
+}
+.favPage input {
+    cursor: default;
+}
+.fav-heart {
+    margin-left: 9px;
+}
+
+
