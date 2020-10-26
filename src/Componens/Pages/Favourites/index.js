@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import FavCards from './../../FavCards';
+import FavCards from './../../Cards/FavCards';
 import { storageHandler } from './../../../helper';
 import './style.css';
 
